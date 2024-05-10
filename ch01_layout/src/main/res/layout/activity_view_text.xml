@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".pr01.ViewTextActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="텍스트 뷰"
+        android:textColor="#FF9800"
+        android:textSize="32dp"
+        android:textStyle="italic"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:background="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="안녕하세용~"
+        android:textColor="#FFFFFF"
+        android:textSize="35dp"
+        android:textStyle="normal"
+        android:fontFamily="serif"
+        android:gravity="bottom"
+        android:background="@drawable/lake_1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="phone|email"
+        android:text="전화번호 : 010-1234-5678
+        이메일 : abc@abc.com"
+        android:textSize="32dp"
+        />
+
+    <!-- 최대 줄 수, 말 줄임표 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/long_text"
+        android:maxLines="2"
+        android:ellipsize="end"
+        />
+
+    <!-- 줄 간격, 글자 간격 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/long_text"
+        android:paddingTop="16dp"
+        android:lineSpacingExtra="8dp"
+        android:lineSpacingMultiplier="1.2"
+        android:letterSpacing="0.1"
+        />
+
+</LinearLayout>
