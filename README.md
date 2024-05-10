@@ -58,3 +58,12 @@
     - 태그의 쌍은 정확하게 매칭이 되어야 한다.
     - 속성의 값은 반드시 큰 따옴표나 작은 따옴표로 감싸야 한다.
     - 루트 엘리먼트(최상위)는 하나여야 한다.
+
+## 뷰의 레이아웃
+- [뷰의 레이아웃](https://developer.android.com/develop/ui/views/layout/declaring-layout?hl=ko)
+  11:14
+- View 클래스 : (화면 구성과 관련된 클래스)
+    - ViewGroup : View의 하위클래스지만, 화면에는 아무것도 출력하지 않고
+      다른 뷰 여러개를 묶는 그릇 역할 클래스
+        - XXXLayout : 뷰의 컨테이너 역할
+    - TextView, XXXView : 특정 UI를 출력할 목적으로 사용하는 클래스 
