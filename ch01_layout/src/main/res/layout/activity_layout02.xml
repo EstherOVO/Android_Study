@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Button"
             android:layout_margin="16dp"
-            android:layout_marginStart="32dp"/>
+            android:layout_marginStart="32dp" />
 
         <!-- 텍스트 및 배경 색상 지정 -->
         <Button
@@ -50,8 +50,7 @@
             android:layout_height="wrap_content"
             android:text="색깔 버튼"
             android:textColor="#000000"
-            android:backgroundTint="#2196F3"
-            />
+            android:backgroundTint="#2196F3" />
 
     </LinearLayout>
 
