@@ -1,15 +1,27 @@
 # 안드로이드(Android)
 
-# ▨ XML(eXtensible Markup Language) ▨
+# ▨ 안드로이드 앱 컴포넌트 ▨
+## :pushpin: 안드로이드 앱 컴포넌트
+1. Activity : 앱의 화면을 담당하는 기본 구성 요소
+2. Intent : 액티비티 간의 전환 또는 외부 앱과의 데이터 교환을 위한 메시지
+3. Service : 백그라운드에서 동작하는 작업 단위
+4. Broadcast Receiver : 시스템 또는 다른 앱에서 발생하는 이벤트 수신
+5. Content Provider : 앱 간 데이터 공유를 위한 인터페이스
+
+# ▨ 안드로이드 개발 환경 ▨
+## :pushpin: 안드로이드 개발 환경
+- 안드로이드 스튜디오(IDE)
+- 안드로이드 SDK : 안드로이드 앱을 개발하기 위한 도구 및 라이브러리 모음
+- 에뮬레이터(Emulator, AVD) : 안드로이드 앱을 테스트할 수 있는 가상 디바이스
 
 # ▨ XML(eXtensible Markup Language) ▨
-## XML(eXtensible Markup Language)
+## :pushpin: XML(eXtensible Markup Language)
 - 데이터를 구조화하고 나타내는 마크업 언어
 - 사람이 이해할 수 있는 구조
 - 기계가 해석할 수 있는 데이터 형식
 - 반정형 데이터
 
-## XML 구성 요소
+## :pushpin: XML 구성 요소
 1. 선언부
 2. 태그(Tag)
     - 데이터를 감싸는 구조화된 요소

@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android_Study"
 include(":app")
- 
+include(":ch01_layout")
