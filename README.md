@@ -66,3 +66,14 @@
     - ViewGroup : View의 하위 클래스지만, 화면에는 아무것도 출력하지 않고 다른 뷰 여러 개를 묶는 그릇 역할을 하는 클래스다.
         - XXXLayout : 뷰의 컨테이너 역할
     - TextView, XXXView : 특정 UI를 출력할 목적으로 사용하는 클래스
+
+## :pushpin: 뷰 바인딩(View Biding)
+- 레이아웃 XML 파일에 선언한 뷰 객체를 코드에서 쉽게 이용하는 방법
+- 모듈 단위 `build.gradle` 파일 `android` 영역에 설정 선언 추가
+  ```
+  android {
+   ... (생략)
+   viewBinding { enable = true }
+   ...
+  }
+  ```
