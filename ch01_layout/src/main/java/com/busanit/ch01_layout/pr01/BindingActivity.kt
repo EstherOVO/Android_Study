@@ -34,6 +34,6 @@ class BindingActivity : AppCompatActivity() {
         val visibleBtn = findViewById<Button>(R.id.visibleButton)
         val targetView = findViewById<TextView>(R.id.targetView)
         val invisibleBtn = findViewById<Button>(R.id.invisibleButton)
- */
+*/
     }
 }

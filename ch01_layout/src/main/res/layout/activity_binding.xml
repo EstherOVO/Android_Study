@@ -24,7 +24,6 @@
         android:visibility="invisible"
         />
 
-
     <Button
         android:id="@+id/invisibleButton"
         android:layout_width="match_parent"
