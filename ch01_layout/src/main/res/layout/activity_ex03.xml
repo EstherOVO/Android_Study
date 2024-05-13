@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ex.Ex03Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인 화면"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:padding="20dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이메일을 입력하세요."
+        android:textSize="15dp"
+        android:textColor="#888383"
+        android:padding="15dp"
+        android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호를 입력하세요."
+        android:textSize="15dp"
+        android:textColor="#888383"
+        android:padding="15dp"
+        android:inputType="textPassword"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="자동 로그인"
+        android:textSize="13dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음에 로그인 유지"
+        android:textSize="13dp"
+        android:layout_marginLeft="10dp"
+        android:trackTint="#4CAF50"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인 방식 선택 : "
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:padding="15dp"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이메일로 로그인"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="휴대폰 번호로 로그인"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="소셜 아이디로 로그인"
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_marginTop="15dp"
+        />
+
+</LinearLayout>

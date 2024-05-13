@@ -75,9 +75,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="안녕하세요. 저는 정에스더입니다. 안드로이드 개발자로 근무하기를 희망하며, 열심히 노력하겠습니다."
+        android:text="안녕하세요, 저는 김철수입니다. 안드로이드 개발자로 근무하고 있으며, 모바일 애플리케이션 개발에 열정을 가지고 있습니다."
         android:textSize="16dp"
-        android:padding="25dp"
+        android:padding="20dp"
         />
 
 </LinearLayout>
