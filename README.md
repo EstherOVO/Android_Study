@@ -77,3 +77,19 @@
    ...
   }
   ```
+- 그레이들을 동기화 하면, 자동으로 뷰 객체 포함하는 클래스가 생성된다.
+- 레이아웃 XML 파일의 이름을 따름
+    - 클래스 이름 : 첫글자 및 _ 뒤를 대문자로 바꾼 후 'Binding' 추가
+        - activity_main.xml → ActivityMainBinding
+  ```kt
+       // 바인딩 객체 획득(View Binding)
+       val binding = ActivityBindingBinding.inflate(layoutInflater)
+
+       // 바인딩 객체로 화면을 출력
+       setContentView(binding.root)
+
+       // findViewById를 사용하지 않고 뷰 객체 사용
+       binding.visibleButton.setOnClickListener {
+           binding.targetView.visibility = View.VISIBLE
+       }
+  ```
