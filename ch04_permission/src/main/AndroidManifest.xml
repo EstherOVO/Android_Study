@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
-<!-- 권한 선언 -->
+    <!-- 권한 선언 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<!-- 사용자 위치 추적 -->
-<!-- ACCESS_FINE_LOCATION : 고정밀 위치 정보 제공(GPS, Wi-Fi, 네트워크 등), 지도 등 -->
-<!-- ACCESS_COARSE_LOCATION : 대략적인 위치 정보를 제공(Wi-Fi, 네트워크 등), 날씨 등 -->
 
     <application
         android:allowBackup="true"
@@ -15,6 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Study">
+        <activity
+            android:name=".Permission01Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
