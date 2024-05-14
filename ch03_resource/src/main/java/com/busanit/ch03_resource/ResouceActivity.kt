@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -21,7 +22,11 @@ class ResouceActivity : AppCompatActivity() {
         val string = getString(R.string.welcome_message)
         Log.d(TAG, string)
 
+//      텍스트 뷰에 리소스 문자열 적용
         val textView = findViewById<TextView>(R.id.textView1)
         textView.text = string
+
+        textView.textSize = resources.getDimension(R.dimen.text_size)
+        textView.setTextColor(ResourcesCompat.getColor(resources, R.color.primary_color, null))
     }
 }
