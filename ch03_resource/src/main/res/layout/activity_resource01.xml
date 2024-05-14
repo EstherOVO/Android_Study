@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResouceActivity"
+    tools:context=".Resource01Activity"
     android:orientation="vertical">
 
     <TextView
@@ -40,6 +40,20 @@
         android:layout_height="wrap_content"
         android:text="강조"
         android:textColor="@color/accent_color"
+        />
+
+    <TextView
+        style="@style/MyTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        />
+
+    <TextView
+        style="@style/MyTextStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
         />
 
 </LinearLayout>

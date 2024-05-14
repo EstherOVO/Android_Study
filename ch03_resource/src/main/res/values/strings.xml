@@ -1,5 +1,5 @@
 <resources>
-<!-- 문자열 리소스를 정의 -->
+    <!-- 문자열 리소스를 정의 -->
     <string name="app_name">ch03_resource</string>
     <string name="welcome_message">안녕하세요~ 반갑습니다!</string>
     <string name="btn_text">클릭하세요!~</string>
