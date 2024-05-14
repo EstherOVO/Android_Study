@@ -93,3 +93,15 @@
            binding.targetView.visibility = View.VISIBLE
        }
   ```
+  
+## :pushpin: 뷰를 배치하는 레이아웃
+1. 수평, 수직으로 배치 - `LinearLayout`
+2. 상대적인 위치로 배치 - `RelativeLayout`
+3. 겹쳐서 배치 - `FrameLayout`
+4. 격자 형태로 배치 - `GridLayout`
+5. 제약조건으로 배치 - `ConstraintLayout`
+
+## :pushpin: 사용자 이벤트 처리
+1. 터치 이벤트
+2. 키 이벤트
+3. 뷰 이벤트
