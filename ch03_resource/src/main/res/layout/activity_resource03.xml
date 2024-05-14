@@ -5,31 +5,39 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Resource02Activity"
+    tools:context=".Resource03Activity"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_text"
-        android:textSize="@dimen/text_size"
-        android:textColor="@color/button_text"
-        />
-
+<!-- 안드로이드 플랫폼 리소스 사용하기 -->
+<!-- `@android:...` 형식으로 사용  -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, Fonts!"
-        android:fontFamily="@font/poetsen"
+        android:text="Hello, Resource"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="40sp"
+        />
+
+<!-- 플랫폼 문자열 리소스 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@android:string/ok"
         android:textSize="40sp"
         />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Font In Codes"
+        android:text="@android:string/no"
         android:textSize="40sp"
+        />
+
+<!-- 플랫폼 드로어블 -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/alert_dark_frame"
         />
 
 </LinearLayout>
