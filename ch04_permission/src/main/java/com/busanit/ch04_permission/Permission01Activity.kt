@@ -22,8 +22,7 @@ class Permission01Activity : AppCompatActivity() {
 //      2. 런타임 퍼미션 요청(API 23 이상)
 
 //      퍼미션 요청 런쳐를 등록
-        val requestLauncher: ActivityResultLauncher<String> = registerForActivityResult(
-            ActivityResultContracts.RequestPermission()) { isGranted ->
+        val requestLauncher: ActivityResultLauncher<String> = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
                 Log.d("mylog", "권한을 승인받았습니다.")
             } else {
@@ -39,7 +38,8 @@ class Permission01Activity : AppCompatActivity() {
         if (permissionStatus == PackageManager.PERMISSION_GRANTED) {
             Log.d("mylog", "권한이 허용되어 있습니다.")
         } else {
-
+            // 퍼미션 권한이 허용되지 않은 경우 다시 퍼미션을 요청
+            requestLauncher.launch("android.permission.ACCESS_FINE_LOCATION")
         }
     }
 }
