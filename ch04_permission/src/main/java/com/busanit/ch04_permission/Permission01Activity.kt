@@ -38,7 +38,7 @@ class Permission01Activity : AppCompatActivity() {
         if (permissionStatus == PackageManager.PERMISSION_GRANTED) {
             Log.d("mylog", "권한이 허용되어 있습니다.")
         } else {
-            // 퍼미션 권한이 허용되지 않은 경우 다시 퍼미션을 요청
+//          퍼미션 권한이 허용되지 않은 경우 다시 퍼미션을 요청
             requestLauncher.launch("android.permission.ACCESS_FINE_LOCATION")
         }
     }
