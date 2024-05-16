@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 진동 권한 사용 선언 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 알림 권한 사용 선언  -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Study">
         <activity
-            android:name=".RingtoneActivity"
+            android:name=".NotiActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RingtonActivity"
+            android:name=".RingtoneActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
