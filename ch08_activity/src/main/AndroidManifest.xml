@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Study">
         <activity
+            android:name=".intent.Intent02Activity"
+            android:exported="false" />
+        <activity
+            android:name=".intent.Intent01Activity"
+            android:exported="false" />
+        <activity
             android:name=".life_cycle.LifeCycleActivity"
             android:exported="true">
             <intent-filter>
