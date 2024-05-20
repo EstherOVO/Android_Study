@@ -921,3 +921,22 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
   - `startService(Intent)` : 서비스를 시작한다.
   - `stopService(Intent)` : 서비스를 중지한다.
   - `sendBroadcast(Intent)` : 브로드캐스트를 보낸다.
+
+## :pushpin: 자주 사용하는 암시적 Intent 상수들
+| 상수 (Constant)                  | 설명 (Description)                                     |
+|----------------------------------|--------------------------------------------------------|
+| `Intent.ACTION_VIEW`             | 주어진 URI에 대한 데이터를 보기          |
+| `Intent.ACTION_SEND`             | 데이터를 다른 애플리케이션으로 보내기     |
+| `Intent.ACTION_SENDTO`           | 특정 주소로 이메일을 보내기             |
+| `Intent.ACTION_PICK`             | 데이터를 선택하기                      |
+| `Intent.ACTION_DIAL`             | 전화 다이얼을 열기                     |
+| `Intent.ACTION_CALL`             | 직접 전화를 걸기(권한 필요)             |
+| `Intent.ACTION_EDIT`             | 데이터를 편집하기                      |
+| `Intent.ACTION_DELETE`           | 데이터를 삭제하기                      |
+| `Intent.ACTION_GET_CONTENT`      | 사용자에게 데이터를 선택하도록 허용              |
+| `Intent.ACTION_IMAGE_CAPTURE`    | 카메라 앱을 열어 사진을 찍기            |
+| `Intent.ACTION_VIDEO_CAPTURE`    | 카메라 앱을 열어 동영상을 찍기          |
+| `Intent.ACTION_VIEW_DOWNLOADS`   | 다운로드한 파일을 보기                 |
+| `Intent.ACTION_APPLICATION_DETAILS_SETTINGS` | 앱의 설정 화면을 열기        |
+| `Intent.ACTION_SETTINGS`         | 설정 화면을 열기                       |
+| `Intent.ACTION_WEB_SEARCH`       | 웹 검색을 시작하기                     |
