@@ -889,3 +889,35 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse("<https://www.example.com>"))
     startActivity(intent)
     ```
+
+# ▨ 컨텍스트(Context) ▨
+## :pushpin: 컨텍스트(Context)
+- 컨텍스트(Context) : 안드로이드 애플리케이션의 중요한 클래스 중 하나로, 애플리케이션의 환경 정보를 제공하는 인터페이스
+- 애플리케이션의 다양한 리소스, 애플리케이션 전역의 정보 및 특정 작업을 수행할 수 있는 기능을 제공한다.
+
+## :pushpin: Context의 종류
+1. Application Context
+    - 애플리케이션의 수명 주기와 동일한 Context
+    - 애플리케이션 전역에서 사용할 수 있으며, 일반적으로 애플리케이션의 수명 동안 유지된다.
+2. Activity Context
+    - 특정 액티비티의 수명 주기와 동일한 Context
+    - Activity가 파괴되면 이 Context도 함께 파괴된다.
+3. Service Context
+    - 특정 서비스의 수명 주기와 동일한 Context
+
+## :pushpin: Context의 주요 역할
+1. 리소스 접근 : 앱의 리소스에 접근할 수 있도록 한다.(예: 문자열, 이미지, 레이아웃 등)
+2. 애플리케이션 레벨 작업 수행 : 애플리케이션 레벨의 작업을 수행하는 데 사용된다.(시작, 중지 서비스, 브로드캐스트 수신 등)
+3. 앱 컴포넌트 관리 : 애플리케이션의 컴포넌트(Activity, Service, BroadcastReceiver, ContentProvider)에 대한 정보와 접근을 제공한다.
+4. 시스템 서비스 접근 : 시스템 서비스(WINDOW_SERVICE, LAYOUT_INFLATER_SERVICE 등)에 접근할 수 있도록 한다.
+
+## :pushpin: Context의 주요 메서드
+- 리소스 접근
+  - `getResources()` : 앱의 리소스에 접근한다.
+  - `getString(R.string.example)` : 문자열 리소스를 가져온다.
+  - `getDrawable(R.drawable.example)` : `drawable` 리소스를 가져온다.
+- 애플리케이션 레벨 작업
+  - `startActivity(Intent)` : 새로운 액티비티를 시작한다.
+  - `startService(Intent)` : 서비스를 시작한다.
+  - `stopService(Intent)` : 서비스를 중지한다.
+  - `sendBroadcast(Intent)` : 브로드캐스트를 보낸다.
