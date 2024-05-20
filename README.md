@@ -826,6 +826,66 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 ```
 
 ## :pushpin: 참고 자료
-- [Android Developers: Menus 추가](https://developer.android.com/develop/ui/views/components/menus?hl=ko)
+- [Android Developers : Menus 추가](https://developer.android.com/develop/ui/views/components/menus?hl=ko)
 - [Android ActionBar 사용 가이드](https://developer.android.com/guide/topics/ui/actionbar)
 - [Material Design의 App Bar](https://material.io/components/app-bars-top)
+
+# ▨ 액티비티(Activity) ▨
+## :pushpin: 액티비티(Activity)
+- Activity는 안드로이드 앱의 화면을 구성하는 기본 단위
+- 각 Activity는 사용자와 상호작용하는 단일 화면을 나타낸다.
+
+## :pushpin: Activity 생명 주기(Life Cycle)
+- Activity는 여러 상태를 거치며, 각각의 상태 전환 시 특정 콜백 메서드가 호출된다. → Activity 생명 주기
+- 생명 주기를 이해하면 효율적으로 리소스를 관리하고 앱의 상태를 제어할 수 있다.
+
+## :pushpin: 주요 생명 주기 메서드
+1. `onCreate()`
+    - Activity가 처음 생성될 때 호출된다.
+    - 초기화 작업을 수행
+    - 예시) UI 설정, 데이터 바인딩
+2. `onStart()`
+    - Activity가 사용자에게 보이기 시작할 때 호출된다.
+3. `onResume()`
+    - Activity가 사용자와 상호작용하기 직전에 호출된다.
+4. `onPause()`
+    - 다른 Activity가 시작되려 할 때 호출된다.
+    - 데이터 저장 등 필요한 작업을 수행한다.
+5. `onStop()`
+    - Activity가 더 이상 사용자에게 보이지 않을 때 호출된다.
+6. `onDestroy()`
+    - Activity가 소멸되기 직전에 호출된다.
+
+## :pushpin: 참고 자료
+- ![Activity 생명주기](https://developer.android.com/images/activity_lifecycle.png)
+
+# ▨ 인텐트(Intent) ▨
+## :pushpin: 인텐트(Intent)
+- 인텐트(Intent) : 안드로이드 컴포넌트 간에 작업을 수행하도록 요청하는 메시지 객체
+- 인텐트는 주로 액티비티(Activity)를 시작하거나, 서비스(Service)를 시작하거나, 브로드캐스트(Broadcast)를 전송할 때 사용된다.
+
+## :pushpin: 주요 역할
+- 액티비티 전환 : 인텐트를 통해 다른 액티비티를 시작할 수 있다.
+- 데이터 전달 : 인텐트를 통해 데이터(문자열, 숫자 등)를 다른 컴포넌트로 전달할 수 있다.
+- 외부 앱 호출 : 인텐트를 통해 다른 앱을 호출할 수 있다.
+  - 예시) 웹 브라우저를 열거나 연락처 앱을 실행할 수 있다.
+
+## :pushpin: 명시적 인텐트와 암시적 인텐트
+- 명시적 인텐트 (Explicit Intent)
+  - 명시적 인텐트는 특정 컴포넌트를 명시적으로 지정하여 작업을 요청한다.
+  - 주로 앱 내부에서 액티비티를 전환할 때 사용된다.
+  - 예시)
+    ```kotlin
+    // 명시적 인텐트를 사용하여 SecondActivity 시작
+    val intent = Intent(this, SecondActivity::class.java)
+    startActivity(intent)
+    ```
+- 암시적 인텐트 (Implicit Intent)
+  - 암시적 인텐트는 요청할 작업의 일반적인 정보를 제공하고, 이를 처리할 수 있는 컴포넌트를 시스템이 선택한다.
+  - 주로 외부 앱과의 통신이나 특정 작업을 수행할 수 있는 앱을 호출할 때 사용된다.
+  - 예시) 
+    ```kotlin
+    // 암시적 인텐트를 사용하여 웹 브라우저에서 URL 열기
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("<https://www.example.com>"))
+    startActivity(intent)
+    ```
