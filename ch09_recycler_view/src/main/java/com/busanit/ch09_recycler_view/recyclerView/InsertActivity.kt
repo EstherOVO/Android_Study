@@ -34,7 +34,7 @@ class InsertActivity : AppCompatActivity() {
                     this@InsertActivity,
                     DividerItemDecoration.VERTICAL
                 )
-            )  // 구분선 추가
+            )   // 구분선 추가
 
 //          추가 버튼이 클릭되었을 때
             addButton.setOnClickListener {
