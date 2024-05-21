@@ -9,7 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Study">
         <activity
-            android:name=".list.ListViewActivity"
+            android:name=".recyclerView.RecyclerViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".listView.ListViewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
