@@ -74,8 +74,8 @@ class ListViewActivity : AppCompatActivity() {
 //          뷰에 데이터를 설정
             binding.run {
                 carImageView.setImageResource(R.mipmap.ic_launcher)
-                carNameText.text = car.name
-                carMakerText.text = car.maker
+                carNameTextView.text = car.name
+                carMakerTextView.text = car.maker
             }
 
 //          완성된 항목의 뷰를 반환

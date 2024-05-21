@@ -39,8 +39,8 @@ class AddViewActivity : AppCompatActivity() {
 //          뷰에 데이터를 바인딩
             carItemBinding.run {
                 carImageView.setImageDrawable(resources.getDrawable(R.drawable.ic_launcher_background, theme))
-                carNameText.text = car.name
-                carMakerText.text = car.maker
+                carNameTextView.text = car.name
+                carMakerTextView.text = car.maker
             }
 
 //          컨테이너에 항목 뷰를 추가

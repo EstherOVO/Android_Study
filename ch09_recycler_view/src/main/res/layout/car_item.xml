@@ -11,23 +11,23 @@
         />
 
     <TextView
-        android:id="@+id/carNameText"
+        android:id="@+id/carNameTextView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
+        android:text="차이름"
         android:textSize="18sp"
-        android:text="차 이름"
         />
 
     <TextView
-        android:id="@+id/carMakerText"
+        android:id="@+id/carMakerTextView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:textSize="18sp"
         android:text="제조사"
+        android:textSize="18sp"
         />
 
 </LinearLayout>
