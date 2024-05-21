@@ -940,3 +940,89 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 | `Intent.ACTION_APPLICATION_DETAILS_SETTINGS` | 앱의 설정 화면을 열기        |
 | `Intent.ACTION_SETTINGS`         | 설정 화면을 열기                       |
 | `Intent.ACTION_WEB_SEARCH`       | 웹 검색을 시작하기                     |
+
+# ▨ Intent와 ActivityResult ▨
+## :pushpin: 인텐트를 사용하여 데이터 전달하기
+- 개념 설명 : 인텐트(Intent)는 안드로이드 컴포넌트 간에 작업을 요청하거나 데이터를 주고받는 메시지 객체
+  - 데이터 전달을 위해 `putExtra` 메서드를 사용하여 인텐트에 데이터를 추가하고, `getStringExtra` 등의 메서드를 사용하여 데이터를 수신한다.
+- 인텐트를 사용하여 데이터 전달하는 방법
+  1. 데이터 추가: `putExtra` 메서드를 사용하여 데이터를 인텐트에 추가
+  2. 인텐트 시작: `startActivity` 메서드를 사용하여 인텐트를 시작
+  3. 데이터 수신: 수신 측에서는 `getStringExtra` 등의 메서드를 사용하여 데이터를 수신
+- 데이터 전달의 주요 메서드
+| 메서드                      | 설명                                                          |
+|-----------------------------|---------------------------------------------------------------|
+| `putExtra(String, value)`   | 인텐트에 추가 데이터를 넣습니다.                              |
+| `getStringExtra(String)`    | 전달된 문자열 데이터를 수신합니다.                            |
+| `getIntExtra(String, int)`  | 전달된 정수형 데이터를 수신합니다.                            |
+| `getBooleanExtra(String, boolean)` | 전달된 불린형 데이터를 수신합니다.                    |
+
+## :pushpin: 인텐트를 사용하여 결과 받기
+- 개념 설명
+  - 다른 액티비티를 시작하고, 그 액티비티가 종료된 후 결과를 받기 위해 `startActivityForResult` 메서드를 사용한다.
+  - 결과는 `onActivityResult` 메서드에서 처리한다.
+  - 새로운 방법으로는 Activity Result API를 사용하여 결과를 처리할 수 있다.
+- 인텐트를 사용하여 결과 받는 방법
+  1. 인텐트 시작: `startActivityForResult` 메서드를 사용하여 인텐트를 시작하고 요청 코드를 지정
+  2. 결과 처리: 호출된 액티비티에서 `setResult` 메서드를 사용하여 결과를 설정
+  3. 결과 수신: 호출한 액티비티에서는 `onActivityResult` 메서드를 오버라이드하여 결과를 처리
+- 결과 반환의 주요 메서드
+| 메서드                            | 설명                                                               |
+|-----------------------------------|--------------------------------------------------------------------|
+| `startActivityForResult(Intent, int)` | 인텐트를 시작하고 결과를 요청합니다.                              |
+| `setResult(int, Intent)`          | 결과를 설정합니다. (RESULT_OK 또는 RESULT_CANCELED)                  |
+| `onActivityResult(int, int, Intent)` | 요청 코드, 결과 코드, 데이터를 수신하여 결과를 처리합니다.         |
+
+## :pushpin: Activity Result API
+- 개념 설명
+  - Activity Result API는 `startActivityForResult`와 `onActivityResult`를 대체하여 결과를 처리한다.
+  - 이 API는 요청 코드가 필요 없으며, 결과 처리 로직을 인텐트를 시작하는 곳에 가까이 두어 코드의 가독성과 유지 보수성을 높인다.
+- Activity Result API 사용 방법
+  1. ActivityResultContract: 어떤 종류의 인텐트를 보낼지와 그에 따른 결과를 정의
+  2. ActivityResultLauncher: 인텐트를 시작하고 결과를 처리
+- Activity Result API의 주요 클래스와 인터페이스
+| 클래스/인터페이스                          | 설명                                                                   |
+|--------------------------------------------|------------------------------------------------------------------------|
+| `ActivityResultContract`                   | 인텐트와 그 결과를 정의하는 계약 인터페이스입니다.                       |
+| `ActivityResultLauncher`                   | 인텐트를 시작하고 결과를 처리하는 런처입니다.                            |
+| `registerForActivityResult(Contract, Callback)` | 계약과 콜백을 등록하여 ActivityResultLauncher를 초기화합니다.           |
+
+## :pushpin: 자주 사용하는 ActivityResultContract
+- ActivityResultContracts는 다양한 기본 계약을 제공한다.
+| ActivityResultContract                     | 설명                                                               |
+|--------------------------------------------|--------------------------------------------------------------------|
+| `ActivityResultContracts.StartActivityForResult` | 기본 인텐트를 사용하여 결과를 반환합니다.                              |
+| `ActivityResultContracts.RequestPermission` | 특정 권한을 요청하고 그 결과를 반환합니다.                              |
+| `ActivityResultContracts.TakePicture`      | 카메라를 사용하여 사진을 찍고 그 결과를 반환합니다.                     |
+| `ActivityResultContracts.PickContact`      | 연락처를 선택하고 그 결과를 반환합니다.                              |
+
+## :pushpin: Activity Result API의 차이점
+- 간결함: `onActivityResult` 메서드를 오버라이드하지 않아도 되므로 코드가 간결해진다.
+- 명확성: 결과 처리 로직이 인텐트를 시작하는 곳과 가까워져 코드의 가독성이 좋아진다.
+- 유지 보수성: 각 결과 처리를 독립적으로 구성할 수 있어 코드 유지 보수가 용이하다.
+
+## :pushpin: 참고 자료
+- [안드로이드 개발자 공식 문서: Intent와 Intent Filters](https://developer.android.com/guide/components/intents-filters)
+- [안드로이드 개발자 공식 문서: 액티비티 결과 처리](https://developer.android.com/training/basics/intents/result)
+- [안드로이드 개발자 공식 문서: Activity Result API](https://developer.android.com/training/basics/intents/result)
+
+# ▨ 액티비티 스택(Activity Stack) ▨
+## :pushpin: 액티비티 스택(Activity Stack)
+- 액티비티 스택은 LIFO(Last In, First Out) 구조로, 안드로이드 시스템에서 액티비티를 관리하는 방법
+- 새로운 액티비티가 시작될 때마다 스택의 맨 위에 추가되고, 뒤로 가기(Back) 버튼을 누르면 스택의 맨 위에 있는 액티비티가 제거된다.
+
+## :pushpin: 스택의 동작 방식
+1. 새로운 액티비티 시작 : `startActivity()` 메서드를 호출하면 새로운 액티비티가 시작되고 스택의 맨 위에 추가된다.
+2. 현재 액티비티 일시 중지 : 새로운 액티비티가 시작되면 현재 액티비티는 일시 중지 상태(Paused)가 된다.
+3. 현재 액티비티 종료 : `finish()` 메서드를 호출하면 현재 액티비티가 종료되고 스택에서 제거된다.
+4. 뒤로 가기 버튼 : 사용자가 뒤로 가기 버튼을 누르면 스택의 맨 위에 있는 액티비티가 제거되고, 그 아래에 있는 액티비티가 다시 활성화된다.
+
+## :pushpin: 인텐트 플래그(Intent Flags)
+- `FLAG_ACTIVITY_NEW_TASK` : 새로운 태스크(Task)에서 액티비티를 시작한다.
+- `FLAG_ACTIVITY_CLEAR_TOP` : 스택의 위에 있는 액티비티들을 제거하고 지정된 액티비티를 최상단으로 가져온다.
+- `FLAG_ACTIVITY_SINGLE_TOP` : 스택의 최상단에 동일한 액티비티가 이미 존재하는 경우, 새로운 인스턴스를 생성하지 않고 기존 인스턴스를 재사용한다.
+
+## :pushpin: 태스크(Task)와 백스택(Back Stack)
+- 태스크는 사용자 작업의 논리적인 단위로, 여러 액티비티로 구성될 수 있다.
+  - 예시) 이메일 작성, 전송, 확인 등의 작업이 하나의 태스크를 구성할 수 있다.
+- 백스택은 액티비티 스택의 또 다른 표현으로, 사용자가 이전에 방문한 액티비티의 기록을 담고 있어 사용자가 뒤로 가기 버튼을 눌렀을 때 이전 액티비티로 돌아갈 수 있게 한다.
