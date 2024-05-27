@@ -4,16 +4,10 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.busanit.ch11_persistence.R
 import com.busanit.ch11_persistence.databinding.ActivityExternalBinding
-import com.busanit.ch11_persistence.databinding.ActivityInternalBinding
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileInputStream

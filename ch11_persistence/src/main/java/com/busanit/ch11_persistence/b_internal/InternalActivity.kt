@@ -2,14 +2,9 @@ package com.busanit.ch11_persistence.b_internal
 
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.busanit.ch11_persistence.R
 import com.busanit.ch11_persistence.databinding.ActivityInternalBinding
 import java.io.BufferedReader
-import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.InputStreamReader
 

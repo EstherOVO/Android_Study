@@ -1,11 +1,7 @@
 package com.busanit.ch11_persistence.a_preference
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.busanit.ch11_persistence.R
 import com.busanit.ch11_persistence.databinding.ActivityPreferenceBinding
 
 class PreferenceActivity : AppCompatActivity() {
