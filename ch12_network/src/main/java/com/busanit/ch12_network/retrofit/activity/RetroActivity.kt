@@ -1,7 +1,11 @@
 package com.busanit.ch12_network.retrofit.activity
 
 import android.content.Intent
+import android.os.Build.VERSION_CODES.P
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busanit.ch12_network.databinding.ActivityRetroBinding
@@ -15,6 +19,7 @@ import retrofit2.Response
 class RetroActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityRetroBinding
+    lateinit var adapter: PostAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +39,8 @@ class RetroActivity : AppCompatActivity() {
                     val posts = response.body() ?: emptyList()
 
 //                  리사이클러 뷰 어댑터 매개변수를 통해 데이터 전달 + 어댑터 연결
-                    binding.recyclerView.adapter = PostAdapter(posts)
+                    adapter = PostAdapter(posts)
+                    binding.recyclerView.adapter = adapter
                 }
             }
 
@@ -43,12 +49,41 @@ class RetroActivity : AppCompatActivity() {
             }
         })
 
+//      Result API
+        val activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+            adapter.notifyDataSetChanged()  // 리사이클러 뷰 데이터 셋 갱신
+
+            binding.recyclerView.scrollToPosition(0)    // 최상단으로 스크롤
+        }
+
 //      버튼을 클릭하면 글 작성 액티비티로
         binding.buttonCreate.setOnClickListener {
 
             val intent = Intent(this, NewPostActivity::class.java)
 
-            startActivity(intent)
+//          startActivity(intent)   결과 반환하지 않을 시
+            activityResultLauncher.launch(intent)   // 액티비티 결과 반환
         }
+    }
+
+//  레트로 핏 오류 처리
+//  응답은 하였으나, 성공(200번대)이 아닌 경우
+    private fun handleServerError(response: Response<*>) {
+
+        when (response.code()) {
+
+            400 -> Log.d("myLog", "400 Bad Request ${response.message()}")
+            401 -> Log.d("myLog", "401 Unauthorized ${response.message()}")
+            403 -> Log.d("myLog", "403 Forbidden ${response.message()}")
+            404 -> Log.d("myLog", "404 Not Found ${response.message()}")
+            500 -> Log.d("myLog", "500 Server Error ${response.message()}")
+        }
+    }
+
+    private fun handleNetworkError(t: Throwable) {
+
+        Log.d("myLog", "Network Error ${t.message}")
+        Toast.makeText(this, "네트워크 요청 실패", Toast.LENGTH_SHORT).show()
     }
 }
