@@ -1,5 +1,6 @@
 package com.busanit.ch12_network.retrofit.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,5 +42,13 @@ class RetroActivity : AppCompatActivity() {
 //              실패처리
             }
         })
+
+//      버튼을 클릭하면 글 작성 액티비티로
+        binding.buttonCreate.setOnClickListener {
+
+            val intent = Intent(this, NewPostActivity::class.java)
+
+            startActivity(intent)
+        }
     }
 }

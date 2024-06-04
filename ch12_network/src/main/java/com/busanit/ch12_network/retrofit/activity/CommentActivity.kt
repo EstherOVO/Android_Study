@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.busanit.ch12_network.databinding.ActivityCommentBinding
 import com.busanit.ch12_network.retrofit.RetrofitClient
 import com.busanit.ch12_network.retrofit.adapter.CommentAdapter
-import com.busanit.ch12_network.retrofit.adapter.PostAdapter
 import com.busanit.ch12_network.retrofit.model.Comment
-import com.busanit.ch12_network.retrofit.model.Post
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
